@@ -15,6 +15,17 @@ exports.protected = (req, res, next) => {
     req.user = decondeToken;
     next();
   } catch (error) {
-    return res.status(403).json({ message: "Token invalid or expired" });
+    if (error.name === "TokenExpiredError") {
+      console.error("Token has expired at:", error.expiredAt);
+      return res
+        .status(401)
+        .json({ message: "Token has expired", expiredAt: error.expiredAt });
+    } else if (error.name === "JsonWebTokenError") {
+      console.error("JWT error:", error.message);
+      return res.status(403).json({ message: "Invalid token" });
+    } else {
+      console.error("Unexpected error:", error);
+      return res.status(500).json({ message: "Internal server error" });
+    }
   }
 };

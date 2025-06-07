@@ -6,7 +6,7 @@ const { protected } = require("../middleware/authMiddleware");
 //Public Routes
 
 router.post("/login", login);
-router.post("/refresh",refreshToken)
+router.post("/refresh", refreshToken);
 
 //Protected Routes
 
