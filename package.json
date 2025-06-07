@@ -1,0 +1,19 @@
+{
+  "name": "node_api_template",
+  "version": "1.0.0",
+  "description": "This is template for node js backend server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janithmadu/node_api_template.git"
+  },
+  "author": "Janith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janithmadu/node_api_template/issues"
+  },
+  "homepage": "https://github.com/janithmadu/node_api_template#readme"
+}
